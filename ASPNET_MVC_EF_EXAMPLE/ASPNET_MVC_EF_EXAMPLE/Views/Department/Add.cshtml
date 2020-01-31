@@ -1,0 +1,30 @@
+﻿@model ASPNET_MVC_EF_EXAMPLE.Models.Departments
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+@{
+    /*
+     <form method="post" action="/Save">
+    <div>
+        <label>Departman Adı:</label>
+        <input type="text" name="DepartmentName"/>
+    </div>
+    <button type="submit">Kaydet</button>
+    </form>
+     */
+}
+
+
+@using (Html.BeginForm("Save", "Department", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.DepartmentName)
+        @Html.TextBoxFor(m => m.DepartmentName, new { @class = "form-control" })
+    </div>
+    <button type="submit">Ekle</button>
+    <input name="__RequestVerificationToken" type="hidden" value="<token_generated_here>">
+}
+

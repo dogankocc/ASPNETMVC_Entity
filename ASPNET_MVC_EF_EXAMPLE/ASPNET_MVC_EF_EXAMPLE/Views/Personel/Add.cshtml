@@ -1,0 +1,68 @@
+﻿@model ASPNET_MVC_EF_EXAMPLE.Models.PersonelViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("Save","Personel", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>PersonelViewModel</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personel.PersonelName)
+        @Html.TextBoxFor(m => m.Personel.PersonelName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personel.PersonelSirname)
+        @Html.TextBoxFor(m => m.Personel.PersonelSirname, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personel.DepartmentID)
+        @Html.DropDownListFor(m => m.Personel.DepartmentID, new SelectList(Model.Departments, "DepartmentID", "DepartmentName"), new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personel.PersonelSalary)
+        @Html.TextBoxFor(m => m.Personel.PersonelSalary, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personel.PersonelBirthdate)
+        @Html.EditorFor(m => m.Personel.PersonelBirthdate, new { @class = "form-control" })
+    </div>
+
+    <div class="radio">
+        <label>
+            @Html.RadioButtonFor(m => m.Personel.PersonelGender ,true) Erkek
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.Personel.PersonelGender, false) Kadın
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(e=> e.Personel.MarriageStatus )  Evli
+        </label>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

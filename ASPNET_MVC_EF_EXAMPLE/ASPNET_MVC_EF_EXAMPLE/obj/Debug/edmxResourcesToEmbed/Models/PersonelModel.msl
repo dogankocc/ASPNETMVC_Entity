@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="doantestModelStoreContainer" CdmEntityContainer="doantestEntities1">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="doantestModel.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personels">
+      <EntityTypeMapping TypeName="doantestModel.Personels">
+        <MappingFragment StoreEntitySet="Personels">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="PersonelName" ColumnName="PersonelName" />
+          <ScalarProperty Name="PersonelSirname" ColumnName="PersonelSirname" />
+          <ScalarProperty Name="PersonelAge" ColumnName="PersonelAge" />
+          <ScalarProperty Name="PersonelSalary" ColumnName="PersonelSalary" />
+          <ScalarProperty Name="PersonelBirthdate" ColumnName="PersonelBirthdate" />
+          <ScalarProperty Name="PersonelGender" ColumnName="PersonelGender" />
+          <ScalarProperty Name="MarriageStatus" ColumnName="MarriageStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

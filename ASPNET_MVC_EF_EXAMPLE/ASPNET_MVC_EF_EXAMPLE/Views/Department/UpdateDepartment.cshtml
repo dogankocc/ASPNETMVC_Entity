@@ -1,0 +1,18 @@
+﻿@model ASPNET_MVC_EF_EXAMPLE.Models.Departments
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm("Save", "Department", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.DepartmentName)
+        @Html.TextBoxFor(m => m.DepartmentName, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.DepartmentID)
+    <button type="submit">kaydet</button>
+}
+

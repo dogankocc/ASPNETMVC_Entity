@@ -1,0 +1,57 @@
+﻿@model ASPNET_MVC_EF_EXAMPLE.Models.UserMaster
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/AccountLayout.cshtml";
+}
+
+<h2>Login</h2>
+<link href="~/Content/login-style.css" type="text/css"/>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    
+                   @{ /*    
+                   @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "form-signin" }))
+                   {
+                        <div class="form-label-group">
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Kullanıcı adı", required = true })
+                        </div>
+
+                        <div class="form-label-group">
+                            @Html.LabelFor(m => m.UserPassword)
+                            @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control", placeholder = "Şifre", required = true })        
+                        </div>
+                    }
+                    */}
+                    <form class="form-signin" action="/User/Login" method="post">
+                        <div class="form-label-group">
+
+                            <!--<input type="email" id="UserName" name="UserName" class="form-control" placeholder="Email address" required autofocus>-->
+                            <input type="text" id="UserName" name="UserName" class="form-control" placeholder="User name" required autofocus>
+                            <label for="UserName">User name</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" name="UserPassword" id="UserPassword" class="form-control" placeholder="Password" required>
+                            <label for="UserPassword">Password</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Remember password</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

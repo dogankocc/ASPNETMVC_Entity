@@ -1,0 +1,44 @@
+﻿@model ASPNET_MVC_EF_EXAMPLE.Models.Personels
+@{
+                /**/
+
+                ViewBag.Title = "Update";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm("Save", "Personel", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.PersonelName)
+        @Html.TextBoxFor(m => m.PersonelName, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PersonelSirname)
+        @Html.TextBoxFor(m => m.PersonelSirname, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PersonelBirthdate)
+        @Html.TextBoxFor(m => m.PersonelBirthdate, new { @class = "form-control" })
+    </div>
+    <div class="radio">
+        <label>
+            @Html.RadioButtonFor(m => m.PersonelGender, true) Erkek
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.PersonelGender, false) Kadın
+        </label>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PersonelSalary)
+        @Html.TextBoxFor(m => m.PersonelSalary, new { Type = "number" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.MarriageStatus)
+        @Html.CheckBoxFor(m => m.MarriageStatus) Evli
+    </div>
+    @Html.HiddenFor(m => m.PersonelID)
+    <button type="submit">kaydet</button>
+}
+
